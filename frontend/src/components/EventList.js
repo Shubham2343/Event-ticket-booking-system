@@ -58,23 +58,33 @@ export default function EventList() {
             <div className="cube cube-3" />
             <div className="cube cube-4" />
           </div>
+
+          {/* Premium Circular Imagery */}
+          <div className="hero-circular-container">
+            <div className="circular-main">
+              <div className="circular-gradient" />
+              <div className="circular-inner">🎵</div>
+            </div>
+            <div className="circular-accent circular-accent-1">👥</div>
+            <div className="circular-accent circular-accent-2">🎤</div>
+          </div>
         </div>
+
         <div className="container hero-inner">
-          <span className="hero-badge">🎉 Live events near you</span>
+          <span className="hero-badge">✨ Discover Premium Events</span>
           <h1 className="hero-title">
-            Book your seat to the<br />
-            <span className="hero-highlight">moments that matter</span>
+            Experience <br />
+            <span className="hero-highlight">Unforgettable Moments</span>
           </h1>
           <p className="hero-subtitle">
-            Concerts, comedy, conferences and more — pick your perfect seat,
-            reserve it instantly, and skip the queue.
+            From concerts to comedy nights — find, book, and enjoy the best events in town.
           </p>
           <div className="hero-actions">
             <button className="btn btn-primary btn-lg" onClick={scrollToEvents}>
-              Browse Events
+              Explore All Events
             </button>
             <a href="#how-it-works" className="btn btn-outline btn-lg hero-secondary">
-              How it works
+              Learn More
             </a>
           </div>
 
@@ -184,12 +194,18 @@ export default function EventList() {
           </div>
 
           <div className="featured-grid">
-            {events.slice(0, 3).map((event) => (
+            {events.slice(0, 3).map((event, idx) => {
+              const gradients = [
+                'linear-gradient(135deg, #7c3aed 0%, #ec4899 100%)',
+                'linear-gradient(135deg, #0ea5e9 0%, #7c3aed 100%)',
+                'linear-gradient(135deg, #ec4899 0%, #f97316 100%)',
+              ];
+              return (
               <div key={event._id} className="featured-card">
                 <div
                   className="featured-card-bg"
                   style={{
-                    backgroundImage: `linear-gradient(135deg, #7c3aed 0%, #ec4899 100%)`
+                    backgroundImage: gradients[idx % 3]
                   }}
                 >
                   <div className="featured-overlay">
@@ -201,7 +217,8 @@ export default function EventList() {
                   </div>
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
