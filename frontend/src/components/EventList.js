@@ -50,6 +50,14 @@ export default function EventList() {
         <div className="hero-bg" aria-hidden="true">
           <span className="hero-blob hero-blob-1" />
           <span className="hero-blob hero-blob-2" />
+
+          {/* 3D Animated Cubes */}
+          <div className="hero-3d-container">
+            <div className="cube cube-1" />
+            <div className="cube cube-2" />
+            <div className="cube cube-3" />
+            <div className="cube cube-4" />
+          </div>
         </div>
         <div className="container hero-inner">
           <span className="hero-badge">🎉 Live events near you</span>

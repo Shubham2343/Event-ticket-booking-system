@@ -36,6 +36,79 @@
   left: -60px;
 }
 
+/* ===== 3D Animated Cubes ===== */
+.hero-3d-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  perspective: 1200px;
+}
+
+.cube {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  transform-style: preserve-3d;
+  opacity: 0.15;
+}
+
+.cube::before,
+.cube::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+}
+
+.cube::before { transform: rotateY(90deg) translateZ(40px); }
+.cube::after { transform: rotateY(-90deg) translateZ(40px); }
+
+.cube-1 {
+  top: 10%;
+  right: 5%;
+  animation: float3d 8s ease-in-out infinite;
+}
+
+.cube-2 {
+  top: 60%;
+  left: 8%;
+  animation: float3d 10s ease-in-out infinite 1s;
+  width: 60px;
+  height: 60px;
+}
+
+.cube-3 {
+  top: 40%;
+  right: 15%;
+  animation: float3d 12s ease-in-out infinite 2s;
+  width: 100px;
+  height: 100px;
+}
+
+.cube-4 {
+  bottom: 10%;
+  left: 12%;
+  animation: float3d 9s ease-in-out infinite 1.5s;
+}
+
+@keyframes float3d {
+  0%, 100% {
+    transform: translateY(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  25% {
+    transform: translateY(-30px) rotateX(180deg) rotateY(90deg) rotateZ(45deg);
+  }
+  50% {
+    transform: translateY(-60px) rotateX(360deg) rotateY(180deg) rotateZ(90deg);
+  }
+  75% {
+    transform: translateY(-30px) rotateX(180deg) rotateY(270deg) rotateZ(45deg);
+  }
+}
+
 .hero-inner {
   position: relative;
   z-index: 1;
