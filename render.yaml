@@ -35,7 +35,7 @@ services:
     runtime: static
     rootDir: frontend
     buildCommand: npm install && npm run build
-    staticPublishPath: ./build
+    staticPublishPath: build
     envVars:
       - key: NODE_VERSION
         value: 18.20.4
