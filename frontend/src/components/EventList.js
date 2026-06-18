@@ -174,6 +174,93 @@ export default function EventList() {
       )}
       </div>
 
+      {/* ===== Featured Events Section ===== */}
+      <section className="featured-section">
+        <div className="container">
+          <div className="section-header">
+            <span className="section-eyebrow">🔥 Don't miss out</span>
+            <h2 className="section-title">Featured Events</h2>
+            <p className="section-subtitle">The hottest events happening this week</p>
+          </div>
+
+          <div className="featured-grid">
+            {events.slice(0, 3).map((event) => (
+              <div key={event._id} className="featured-card">
+                <div
+                  className="featured-card-bg"
+                  style={{
+                    backgroundImage: `linear-gradient(135deg, #7c3aed 0%, #ec4899 100%)`
+                  }}
+                >
+                  <div className="featured-overlay">
+                    <span className="featured-badge">🎉 Trending</span>
+                    <h3 className="featured-event-name">{event.name}</h3>
+                    <p className="featured-event-info">
+                      📍 {event.venue} · {event.availableSeats} seats left
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Testimonials Section ===== */}
+      <section className="testimonials-section">
+        <div className="container">
+          <div className="section-header">
+            <span className="section-eyebrow">⭐ Loved by thousands</span>
+            <h2 className="section-title">What fans love</h2>
+            <p className="section-subtitle">Join thousands of happy event-goers</p>
+          </div>
+
+          <div className="testimonials-grid">
+            <div className="testimonial-card">
+              <div className="testimonial-stars">⭐⭐⭐⭐⭐</div>
+              <p className="testimonial-text">
+                "Booking was so easy! I got my seats for the concert in seconds. Best experience ever!"
+              </p>
+              <div className="testimonial-author">
+                <span className="author-avatar">👤</span>
+                <div>
+                  <p className="author-name">Sarah M.</p>
+                  <p className="author-role">Concert Lover</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="testimonial-card">
+              <div className="testimonial-stars">⭐⭐⭐⭐⭐</div>
+              <p className="testimonial-text">
+                "No hidden fees, no stress, no double bookings. This is exactly what we needed!"
+              </p>
+              <div className="testimonial-author">
+                <span className="author-avatar">👤</span>
+                <div>
+                  <p className="author-name">James P.</p>
+                  <p className="author-role">Event Enthusiast</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="testimonial-card">
+              <div className="testimonial-stars">⭐⭐⭐⭐⭐</div>
+              <p className="testimonial-text">
+                "The 10-minute timer is genius. Gives you time to decide without losing your seats!"
+              </p>
+              <div className="testimonial-author">
+                <span className="author-avatar">👤</span>
+                <div>
+                  <p className="author-name">Emma K.</p>
+                  <p className="author-role">Comedy Show Fan</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="how-section" id="how-it-works">
         <div className="container">
           <div className="how-header">
