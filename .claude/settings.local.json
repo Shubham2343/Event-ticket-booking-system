@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(New-Item -ItemType Directory -Force \"C:\\\\Users\\\\shubh\\\\OneDrive\\\\Desktop\\\\assignment\\\\backend\\\\src\\\\models\")",
+      "PowerShell(New-Item -ItemType Directory -Force \"C:\\\\Users\\\\shubh\\\\OneDrive\\\\Desktop\\\\assignment\\\\backend\\\\src\\\\routes\")",
+      "PowerShell(New-Item -ItemType Directory -Force \"C:\\\\Users\\\\shubh\\\\OneDrive\\\\Desktop\\\\assignment\\\\backend\\\\src\\\\middleware\")",
+      "PowerShell(New-Item -ItemType Directory -Force \"C:\\\\Users\\\\shubh\\\\OneDrive\\\\Desktop\\\\assignment\\\\backend\\\\src\\\\controllers\")",
+      "PowerShell(New-Item -ItemType Directory -Force \"C:\\\\Users\\\\shubh\\\\OneDrive\\\\Desktop\\\\assignment\\\\frontend\\\\src\\\\components\")",
+      "PowerShell(New-Item -ItemType Directory -Force \"C:\\\\Users\\\\shubh\\\\OneDrive\\\\Desktop\\\\assignment\\\\frontend\\\\src\\\\context\")",
+      "PowerShell(New-Item -ItemType Directory -Force \"C:\\\\Users\\\\shubh\\\\OneDrive\\\\Desktop\\\\assignment\\\\frontend\\\\src\\\\services\")",
+      "Skill(run)",
+      "Skill(run:*)"
+    ]
+  }
+}

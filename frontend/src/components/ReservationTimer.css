@@ -1,0 +1,63 @@
+.reservation-timer {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 2px solid var(--primary-light);
+  background: linear-gradient(135deg, #f8f7ff, #eef2ff);
+  flex-wrap: wrap;
+}
+
+.reservation-timer.urgent {
+  border-color: var(--danger-light);
+  background: linear-gradient(135deg, #fff5f5, #fee2e2);
+  animation: pulse-border 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse-border {
+  0%, 100% { border-color: var(--danger-light); }
+  50% { border-color: var(--danger); }
+}
+
+.timer-left { flex-shrink: 0; }
+
+.timer-ring { display: block; }
+
+.timer-info { flex: 1; min-width: 160px; }
+
+.timer-title {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--gray-800);
+  margin-bottom: 0.2rem;
+}
+
+.timer-seats {
+  font-size: 0.825rem;
+  color: var(--gray-500);
+  margin-bottom: 0.3rem;
+}
+
+.timer-countdown {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--primary);
+}
+
+.timer-countdown.urgent-text {
+  color: var(--danger);
+  font-weight: 700;
+}
+
+.spinner-sm {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  margin-right: 0.4rem;
+  vertical-align: middle;
+}

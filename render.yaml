@@ -1,0 +1,48 @@
+# Render Blueprint — deploys the backend API and the React frontend.
+# Docs: https://render.com/docs/blueprint-spec
+#
+# After the first deploy, fill in the cross-referencing values in the dashboard:
+#   - backend  CLIENT_ORIGIN  -> the frontend's URL (e.g. https://ticketflow-frontend.onrender.com)
+#   - frontend REACT_APP_API_URL -> the backend's URL + /api (e.g. https://ticketflow-backend.onrender.com/api)
+
+services:
+  # ---------- Backend (Express API) ----------
+  - type: web
+    name: ticketflow-backend
+    runtime: node
+    rootDir: backend
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 18.20.4
+      - key: MONGODB_URI
+        sync: false # Set in dashboard — your MongoDB Atlas connection string
+      - key: JWT_SECRET
+        generateValue: true # Render generates a secure random value
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: RESERVATION_EXPIRY_MINUTES
+        value: "10"
+      - key: CLIENT_ORIGIN
+        sync: false # Set in dashboard — the frontend URL once it's deployed
+
+  # ---------- Frontend (React static site) ----------
+  - type: web
+    name: ticketflow-frontend
+    runtime: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./build
+    envVars:
+      - key: NODE_VERSION
+        value: 18.20.4
+      - key: REACT_APP_API_URL
+        sync: false # Set in dashboard — the backend URL + /api
+    routes:
+      # SPA fallback: serve index.html for client-side routes (/events/, /my-bookings/, ...)
+      - type: rewrite
+        source: /*
+        destination: /index.html

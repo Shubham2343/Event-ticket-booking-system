@@ -1,0 +1,99 @@
+.success-wrapper {
+  max-width: 560px;
+  margin: 2rem auto;
+}
+
+.success-card {
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+
+.success-icon-wrap {
+  margin-bottom: 1.5rem;
+}
+
+.success-circle {
+  width: 80px;
+  height: 80px;
+  background: var(--success);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  animation: pop-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes pop-in {
+  from { transform: scale(0); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+.success-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 0.5rem;
+}
+
+.success-subtitle {
+  color: var(--gray-500);
+  margin-bottom: 2rem;
+}
+
+.booking-details {
+  background: var(--gray-50);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.details-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gray-400);
+  margin-bottom: 1rem;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--gray-200);
+}
+.detail-row:last-child { border-bottom: none; }
+
+.detail-label {
+  font-size: 0.85rem;
+  color: var(--gray-500);
+  flex-shrink: 0;
+}
+
+.detail-value {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--gray-800);
+  text-align: right;
+}
+
+.seats-value {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.booking-id {
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: var(--gray-400);
+}
+
+.success-actions {
+  display: flex;
+  gap: 0.875rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
